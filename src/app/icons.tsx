@@ -1,7 +1,7 @@
 export function GitHubIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -20,7 +20,7 @@ export function GitHubIcon() {
 export function YouTubeIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -40,7 +40,7 @@ export function YouTubeIcon() {
 export function InstagramIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -61,7 +61,7 @@ export function InstagramIcon() {
 export function TwitchIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -80,7 +80,7 @@ export function TwitchIcon() {
 export function CrescentIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -99,7 +99,7 @@ export function CrescentIcon() {
 export function SunIcon() {
   return (
     <svg
-      className="h-4 w-4"
+      className="h-6 w-6"
       fill="none"
       height="24"
       shapeRendering="geometricPrecision"
@@ -119,6 +119,26 @@ export function SunIcon() {
       <path d="M21 12h2" />
       <path d="M4.22 19.78l1.42-1.42" />
       <path d="M18.36 5.64l1.42-1.42" />
+    </svg>
+  );
+}
+
+export function MailIcon() {
+  return (
+    <svg
+      className="h-6 w-6"
+      fill="none"
+      height="24"
+      shapeRendering="geometricPrecision"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      width="24"
+    >
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <path d="M22 6l-10 7L2 6" />
     </svg>
   );
 }

@@ -1,6 +1,14 @@
-import Link from "next/link";
+"use client";
+
 import { ReactElement } from "react";
-import { GitHubIcon, InstagramIcon, TwitchIcon, YouTubeIcon } from "./icons";
+import {
+  GitHubIcon,
+  InstagramIcon,
+  MailIcon,
+  TwitchIcon,
+  YouTubeIcon,
+} from "./icons";
+import { motion } from "framer-motion";
 
 type Portfolio = {
   title: string;
@@ -37,6 +45,11 @@ const portfolio: Portfolio[] = [
 
 const socialLinks: SocialLink[] = [
   {
+    title: "chtozamm@gmail.com",
+    href: "mailto:chtozamm@gmail.com",
+    icon: <MailIcon />,
+  },
+  {
     title: "GitHub",
     href: "https://github.com/chtozamm",
     icon: <GitHubIcon />,
@@ -60,83 +73,110 @@ const socialLinks: SocialLink[] = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-12 px-6 pb-16 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
-      <div className="flex aspect-[12/5] w-screen flex-col items-center justify-center gap-1.5 bg-zinc-100 text-center">
-        <video
-          loop
-          autoPlay
-          muted
-          className="aspect-[12/5] w-screen object-cover"
-          placeholder=""
-        >
-          {/* <source src={"/people-are-strange.mp4"} type="video/mp4" /> */}
-          <source src={"/otter.mp4"} type="video/mp4" />
-        </video>
-      </div>
-      <section className="flex max-w-3xl flex-col items-center justify-center gap-3 [&_p]:w-full">
-        <h1 className="mb-3 w-full">
-          <span className="bg-gradient-to-tl from-blue-600 to-blue-400 bg-clip-text text-3xl font-bold text-transparent dark:from-zinc-50 dark:to-blue-400">
-            Hello there!
-          </span>
-        </h1>
-        <p>
-          My name is Mark, and I&apos;m a{" "}
-          <strong className="bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text text-lg text-transparent dark:from-zinc-50 dark:to-blue-400">
-            web developer
-          </strong>
-          , as well as a photographer, filmmaker and musician.
-        </p>
-        <p>
-          I&apos;m passionate about the creative side of things and enthusiastic
-          about optimizing solutions. Knowledge is my kind of fuel, and I&apos;m
-          always open to learning and exploring new fields. I&apos;m here to
-          create modern, user-friendly websites and enhance existing ones.
-        </p>
-        <p>
-          My goal is to turn your ideas into compelling digital experiences that
-          stand out. Whether it&apos;s a stunning landing page, captivating
-          online showcase, or engaging web application, I&apos;m dedicated to
-          delivering top-quality results that exceed your expectations.
-        </p>
-        <p>
-          Let&apos;s bring your vision to life. Contact me today, and let&apos;s
-          create something amazing together!
-        </p>
-      </section>
-      {/* Social links */}
-      <ul className="flex flex-col gap-1.5">
-        {socialLinks.map((link) => (
-          <Link
-            href={link.href}
-            target="_blank"
-            key={link.title}
-            className="flex items-center gap-1 text-sm"
+    <main className="flex flex-col items-center justify-center overflow-hidden bg-black px-6 pb-12 text-white">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-8">
+        <div className="mt-2 flex w-full flex-col items-center gap-4 text-center">
+          <motion.span
+            initial={{ y: "42vh", scale: 2 }}
+            animate={{ y: 0, scale: 1 }}
+            transition={{ delay: 0.5, ease: "anticipate", duration: 1.5 }}
+            className="text-center text-6xl font-black tracking-tight sm:text-7xl"
           >
-            {link.icon}
-            {link.title}
-          </Link>
-        ))}
-      </ul>
-      {/* Portfolio */}
-      <ul className="grid w-3/4 gap-12">
-        {portfolio.map((website) => (
-          <li key={website.title} className="flex gap-x-12">
-            <div className="flex aspect-[4/5] w-1/3 max-w-lg items-end justify-center overflow-hidden rounded-lg border shadow-sm">
-              <Link
-                href={website.href}
-                target="_blank"
-                className="w-full bg-zinc-900 p-1.5 text-center text-sm text-zinc-100"
+            MM
+          </motion.span>
+          <motion.hr
+            initial={{ width: 0 }}
+            animate={{ width: "100%" }}
+            transition={{ ease: "easeOut", duration: 1.5, delay: 1.4 }}
+            className="w-full border-amber-400"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ease: "easeOut", delay: 1.5, duration: 1.5 }}
+            className="my-4 max-w-md text-lg font-light leading-5 tracking-tight sm:text-2xl"
+          >
+            Hello there! My name is{" "}
+            <strong className="font-semibold">Mark</strong>,<br /> and I&apos;m
+            a <strong className="font-semibold">web developer</strong>, as well
+            as
+            <br /> a photographer, filmmaker and musician.
+          </motion.p>
+          <motion.video
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: "easeOut", delay: 2.5, duration: 1.5 }}
+            loop
+            autoPlay
+            // controls
+            muted
+            playsInline
+            className="mt-2 w-full rounded-md border border-amber-400"
+            poster="placeholder-2.jpg"
+          >
+            {/* <source src={"/otter.mp4"} type="video/mp4" /> */}
+            {/* <source src={"/people-are-strange.mp4"} type="video/mp4" /> */}
+            <source src={"/introduction.mp4"} type="video/mp4" />
+          </motion.video>
+        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeOut", delay: 3, duration: 1.5 }}
+          className="text-md mx-auto mt-4 flex max-w-xl flex-col gap-8 font-light leading-5 tracking-tight sm:text-lg"
+        >
+          <p>
+            I&apos;m passionate about the creative side of things and
+            enthusiastic about optimizing solutions. Knowledge is my kind of
+            fuel, and I&apos;m always open to learning and exploring new fields.
+            I&apos;m here to create{" "}
+            <strong className="font-bold">
+              modern, user-friendly websites
+            </strong>{" "}
+            and enhance existing ones.
+          </p>
+          <p>
+            My goal is to turn <strong className="font-bold">your ideas</strong>{" "}
+            into compelling digital experiences that stand out. Whether
+            it&apos;s a stunning landing page, captivating online showcase, or
+            engaging web application, I&apos;m dedicated to delivering
+            top-quality results that exceed your expectations.
+          </p>
+          <p className="mt-2 text-center text-xl font-medium italic">
+            Let&apos;s bring{" "}
+            <strong className="font-black tracking-normal">your vision</strong>{" "}
+            to life.
+          </p>
+          <p
+            className="mx-auto my-6 max-w-md text-center text-3xl font-black
+        uppercase leading-8 tracking-tight"
+          >
+            Contact me today,
+            <br /> and let&apos;s
+            <br />
+            <i className="text-amber-400">create</i>&nbsp;&nbsp;something
+            <br />
+            <i className="text-amber-400">amazing together!</i>
+          </p>
+
+          <ul className="text-md flex flex-col justify-center gap-3 font-bold tracking-tight">
+            {socialLinks.map((link) => (
+              <li
+                key={link.title}
+                className="flex items-center justify-center gap-1.5 text-center font-light tracking-tight hover:text-zinc-200"
               >
-                {website.title}
-              </Link>
-            </div>
-            <div className="flex w-2/3 flex-col gap-3">
-              <h2 className="text-2xl font-bold">{website.title}</h2>
-              {website.description}
-            </div>
-          </li>
-        ))}
-      </ul>
+                {link.icon}
+                <motion.a
+                  whileHover={{ underlinePosition: 10, underlineThickness: 10 }}
+                  href={link.href}
+                >
+                  {link.title.toUpperCase()}
+                </motion.a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </div>
     </main>
   );
 }
