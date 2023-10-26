@@ -75,12 +75,12 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center overflow-hidden bg-black px-6 pb-12 text-white">
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-8">
-        <div className="mt-2 flex w-full flex-col items-center gap-4 text-center">
+        <div className="flex w-full flex-col items-center gap-4 text-center">
           <motion.span
             initial={{ y: "42vh", scale: 2 }}
             animate={{ y: 0, scale: 1 }}
             transition={{ delay: 0.5, ease: "anticipate", duration: 1.5 }}
-            className="text-center text-6xl font-black tracking-tight sm:text-7xl"
+            className="pt-3.5 text-center text-6xl font-black tracking-tight sm:text-7xl"
           >
             MM
           </motion.span>
@@ -88,7 +88,7 @@ export default function Home() {
             initial={{ width: 0 }}
             animate={{ width: "100%" }}
             transition={{ ease: "easeOut", duration: 1.5, delay: 1.4 }}
-            className="w-full border-amber-400"
+            className="h-0.5 w-full border-none bg-amber-400"
           />
           <motion.p
             initial={{ opacity: 0, y: 25 }}
@@ -111,7 +111,7 @@ export default function Home() {
             // controls
             muted
             playsInline
-            className="mt-2 w-full rounded-md border border-amber-400"
+            className="mt-2 w-full rounded-xl border-2 border-amber-400 "
             poster="placeholder-2.jpg"
           >
             {/* <source src={"/otter.mp4"} type="video/mp4" /> */}
@@ -125,7 +125,7 @@ export default function Home() {
           transition={{ ease: "easeOut", delay: 3, duration: 1.5 }}
           className="text-md mx-auto mt-4 flex max-w-xl flex-col gap-8 font-light leading-5 tracking-tight sm:text-lg"
         >
-          <p>
+          <p className="border-s-2 border-amber-400 bg-zinc-900 py-3 pl-3">
             I&apos;m passionate about the creative side of things and
             enthusiastic about optimizing solutions. Knowledge is my kind of
             fuel, and I&apos;m always open to learning and exploring new fields.
@@ -135,14 +135,14 @@ export default function Home() {
             </strong>{" "}
             and enhance existing ones.
           </p>
-          <p>
+          <p className="border-s-2 border-amber-400 bg-zinc-900 py-3 pl-3">
             My goal is to turn <strong className="font-bold">your ideas</strong>{" "}
             into compelling digital experiences that stand out. Whether
             it&apos;s a stunning landing page, captivating online showcase, or
             engaging web application, I&apos;m dedicated to delivering
             top-quality results that exceed your expectations.
           </p>
-          <p className="mt-2 text-center text-xl font-medium italic">
+          <p className="mt-4 text-center text-xl font-medium italic">
             Let&apos;s bring{" "}
             <strong className="font-black tracking-normal">your vision</strong>{" "}
             to life.
@@ -159,11 +159,11 @@ export default function Home() {
             <i className="text-amber-400">amazing together!</i>
           </p>
 
-          <ul className="text-md flex flex-col justify-center gap-3 font-bold tracking-tight">
+          <ul className="flex flex-col justify-center gap-3 text-center text-base font-light tracking-tight">
             {socialLinks.map((link) => (
               <li
                 key={link.title}
-                className="flex items-center justify-center gap-1.5 text-center font-light tracking-tight hover:text-zinc-200"
+                className="flex items-center justify-center gap-1.5 hover:text-zinc-200"
               >
                 {link.icon}
                 <motion.a
